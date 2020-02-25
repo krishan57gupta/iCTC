@@ -298,7 +298,9 @@ NB <- function(data_case,te){
   }
   if(data_case==3)
   {
-    test_prediction_1 =stats::predict(iCTC::nb_1,te)
+    # test_prediction_1 =stats::predict(iCTC::nb_1,te)
+    data_2=data.frame(t(iCTC::Original_data_1$log_normalized_data_train_1),"labels"=factor(c(rep(0,538),rep(1,1323))))
+    test_prediction_1 =stats::predict(caret::train(data_2[,-c(dim(data_2)[2])],data_2[,dim(data_2)[2]],'nb',trControl=caret::trainControl(method='cv',number=5, returnResamp = "all")),te)
    # test_prediction_2 =stats::predict(iCTC::nb_1,te,type="prob")
   }
 
