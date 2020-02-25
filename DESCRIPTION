@@ -1,0 +1,25 @@
+Package: iCTC
+Type: Package
+Title: Identification of CTC in Blood Streams
+Version: 0.1.0
+Authors@R: c(person("Krishan", "Gupta", email = "krishang@iiitd.ac.in", role = c("aut","cre")), person("Arvind", "Iyer", email = "arvind16122@iiitd.ac.in", role = c("aut")), person("Shreya","Sharma", email = "shreya15096@iiitd.ac.in", role = c("aut")) ,person("Debarka", "Sengupta", email = "debarka@gmail.com", role = c("aut")))
+Maintainer: Krishan Gupta <krishang@iiitd.ac.in>
+Description: Identification of CTC in blood streams using preprocessing techniques and machine learning.
+URL: https://github.com/krishan57gupta/iCTC
+BugReports: https://github.com/krishan57gupta/iCTC/issues
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
+Depends: R (>= 3.6)
+biocViews: 
+    iCTC,
+    identification of circulating tumor cell
+Imports: 
+    BiocManager,
+    harmony
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr

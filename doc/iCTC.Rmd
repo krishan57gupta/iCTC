@@ -1,0 +1,59 @@
+---
+title: "iCTC"
+output: rmarkdown::html_vignette
+vignette: >
+    %\VignetteIndexEntry{iCTC}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r first, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+```
+
+## iCTC: identification of circulating tumor cells
+
+The goal of iCTC is to detect whether peripheral blood cells have CTCs
+(circulating tumor cell) or not.
+
+## Installation
+
+You can install the released version of iCTC from
+[CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages('iCTC')
+```
+or can also be download through below commands 
+
+``` r
+library(devtools)
+install_github('krishan57gupta/iCTC')
+```
+
+## Vignette tutorial
+
+This vignette uses a small dataset of cell samples, which is saved in package itself, to demonstrate a standard pipeline. This vignette can be used as a tutorial as well.
+
+Libraries need to be loaded before running iCTC.
+
+```{r setuplib}
+library(iCTC)
+library(harmony)
+```
+```{r data, message=FALSE,warning = FALSE,include=TRUE, cache=FALSE}
+cell_samples=iCTC::raw_test_data$Clearcell_Polaris_sample_test
+head(cell_samples)
+```
+
+
+```{r main, message=FALSE,warning = FALSE, include=TRUE, cache=FALSE}
+results<-iCTC(cell_samples=cell_samples, cases = c(1:9))
+```
+
+```{r output, message=FALSE,warning = FALSE,include=TRUE, cache=FALSE}
+results
+```
