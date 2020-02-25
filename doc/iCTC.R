@@ -6,7 +6,6 @@ knitr::opts_chunk$set(
 
 ## ----setuplib-----------------------------------------------------------------
 library(iCTC)
-library(harmony)
 
 ## ----data, message=FALSE,warning = FALSE,include=TRUE, cache=FALSE------------
 cell_samples=iCTC::raw_test_data$Clearcell_Polaris_sample_test

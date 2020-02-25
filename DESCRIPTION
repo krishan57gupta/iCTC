@@ -17,7 +17,9 @@ biocViews:
     identification of circulating tumor cell
 Imports: 
     BiocManager,
-    harmony
+    harmony,
+    caret,
+    klaR
 Suggests: 
     knitr,
     rmarkdown,

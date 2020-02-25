@@ -39,7 +39,6 @@ Libraries need to be loaded before running iCTC.
 
 ```{r setuplib}
 library(iCTC)
-library(harmony)
 ```
 
 ```{r data, message=FALSE,warning = FALSE,include=TRUE, cache=FALSE}

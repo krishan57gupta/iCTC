@@ -30,8 +30,6 @@ Libraries need to be loaded before running iCTC.
 
 ``` r
 library(iCTC)
-library(harmony)
-#> Loading required package: Rcpp
 ```
 
 ``` r
