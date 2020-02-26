@@ -17,6 +17,7 @@ or can also be download through below commands
 
 ``` r
 library(devtools)
+install_github("immunogenomics/harmony")
 install_github('krishan57gupta/iCTC')
 ```
 
