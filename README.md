@@ -7,13 +7,7 @@ The goal of iCTC is to detect whether peripheral blood cells have CTCs
 ## Installation
 
 You can install the released version of iCTC from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages('iCTC')
-```
-
-or can also be download through below commands
+[github](https://github.com/krishan57gupta/iCTC) with:
 
 ``` r
 library(devtools)
@@ -220,7 +214,7 @@ results
 #>              Ctc_Naveen_1851013039-6_S89_15
 #> Harmony_NB   "CTC"                         
 #> Harmony_RF   "Blood"                       
-#> Harmony_GBM  "Blood"                       
+#> Harmony_GBM  "CTC"                         
 #> PCA_NB       "CTC"                         
 #> PCA_RF       "CTC"                         
 #> PCA_GBM      "CTC"                         
