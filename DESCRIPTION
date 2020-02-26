@@ -19,7 +19,9 @@ Imports:
     BiocManager,
     harmony,
     caret,
-    klaR
+    klaR,
+    randomForest,
+    gbm
 Suggests: 
     knitr,
     rmarkdown,
