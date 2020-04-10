@@ -21,8 +21,15 @@ The goal of iCTC is to detect whether peripheral blood cells have CTCs
 
 ## Installation
 
-You can install the released version of iCTC from
-[github](https://github.com/krishan57gupta/iCTC) with:
+The developer version of the R package can be installed 
+with the following R commands:
+
+``` r
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install('ROSeq')
+```
+or can be installed with the following R commands:
 
 ``` r
 library(devtools)
@@ -32,7 +39,9 @@ install_github('krishan57gupta/iCTC')
 
 ## Vignette tutorial
 
-This vignette uses a small dataset of cell samples, which is saved in package itself, to demonstrate a standard pipeline. This vignette can be used as a tutorial as well.
+This vignette uses a small dataset of cell samples, 
+which is saved in package itself, to demonstrate a standard pipeline. 
+This vignette can be used as a tutorial as well.
 
 Libraries need to be loaded before running iCTC.
 
@@ -46,7 +55,7 @@ head(cell_samples)
 
 
 ```{r main, message=FALSE,warning = FALSE, include=TRUE, cache=FALSE}
-results<-iCTC(cell_samples=cell_samples, cases = c(1:9))
+results<-iCTC(cell_samples=cell_samples, cases = seq_len(3))
 ```
 
 ```{r output, message=FALSE,warning = FALSE,include=TRUE, cache=FALSE}

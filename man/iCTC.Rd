@@ -4,20 +4,24 @@
 \alias{iCTC}
 \title{iCTC-identification of CTC}
 \usage{
-iCTC(cell_samples, cases = c(1:3))
+iCTC(cell_samples, cases = seq_len(3))
 }
 \arguments{
-\item{cell_samples, }{can contain any number of peripheral blood cells, with atleast desired genes either in row or column}
+\item{cell_samples, }{can contain any number of peripheral blood cells,
+with atleast desired genes either in row or column}
 
-\item{cases, }{can contain any subset of (1,2,3,4,5,6,7,8,9) numbers, meaning of these numbers given below:
+\item{cases, }{can contain any subset of (1,2,3,4,5,6,7,8,9) numbers,
+meaning of these numbers given below:
 1-> Harmony_NB, 2-> Harmony_RF, 3-> Harmony_GBM
 
 4-> PCA_NB, 5-> PCA_RF, 6-> PCA_GBM
 
 7-> Original_NB, 8-> Original_RF, 9-> Original_GBM
 
-Harmony-> projects cells into a shared embedding in which cells group by cell type rather than dataset-specific conditions.
-PCA-> Principal component analysis (PCA) is a technique used to emphasize variation and bring out strong patterns in a dataset.
+Harmony-> projects cells into a shared embedding in which cells group by
+cell type rather than dataset-specific conditions.
+PCA-> Principal component analysis (PCA) is a technique used to emphasize
+variation and bring out strong patterns in a dataset.
 Original means none of (Harmony, PCA).
 
 NB-> Naive Bayes(ML Model)
@@ -25,16 +29,17 @@ RF-> Random Forest(ML Model)
 GBM-> Gradient Boosting Machine(ML Model)}
 }
 \value{
-results, will retrun table of samples and predicted values corresponding cases which have given
+results, will retrun table of samples and predicted values
+corresponding cases which have given
 row conatins cases and column with sample names
 }
 \description{
-this package stats::predicts whether -- is a CTC or not using various preprocessing techniques and machine learning
+this package stats::predicts whether -- is a CTC or
+not using various preprocessing techniques and machine learning
 }
 \examples{
-library(iCTC)
 library(harmony)
 cell_samples=iCTC::raw_test_data$Clearcell_Polaris_sample_test
-results<-iCTC(cell_samples=cell_samples, cases = c(1:9))
+results<-iCTC(cell_samples=cell_samples, cases = seq_len(3))
 print(results)
 }

@@ -12,7 +12,7 @@ cell_samples=iCTC::raw_test_data$Clearcell_Polaris_sample_test
 head(cell_samples)
 
 ## ----main, message=FALSE,warning = FALSE, include=TRUE, cache=FALSE-----------
-results<-iCTC(cell_samples=cell_samples, cases = c(1:9))
+results<-iCTC(cell_samples=cell_samples, cases = seq_len(3))
 
 ## ----output, message=FALSE,warning = FALSE,include=TRUE, cache=FALSE----------
 results
