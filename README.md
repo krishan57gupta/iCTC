@@ -12,7 +12,7 @@ following R commands:
 ``` r
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-BiocManager::install('ROSeq')
+BiocManager::install('iCTC')
 ```
 
 or can be installed with the following R commands:
