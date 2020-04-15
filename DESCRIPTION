@@ -1,7 +1,7 @@
 Type: Package
 Package: iCTC
 Title: Identification of CTC in Blood Streams
-Version: 0.2.99
+Version: 0.99.2
 Authors@R: c(person("Krishan", "Gupta", email = "krishang@iiitd.ac.in", 
     role = c("aut","cre")), person("Arvind", "Iyer", 
     email = "arvind16122@iiitd.ac.in", role = c("aut")), 
