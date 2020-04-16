@@ -4,7 +4,7 @@
 \alias{iCTC}
 \title{iCTC-identification of CTC}
 \usage{
-iCTC(cell_samples, cases = seq_len(3))
+iCTC(cell_samples, cases = c(4, 5, 6))
 }
 \arguments{
 \item{cell_samples, }{can contain any number of peripheral blood cells,
@@ -40,6 +40,6 @@ not using various preprocessing techniques and machine learning
 \examples{
 library(harmony)
 cell_samples=iCTC::raw_test_data$Clearcell_Polaris_sample_test
-results<-iCTC(cell_samples=cell_samples, cases = seq_len(3))
+results<-iCTC(cell_samples=cell_samples, cases = c(4,5,6))
 print(results)
 }

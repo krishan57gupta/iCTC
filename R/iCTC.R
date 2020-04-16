@@ -26,16 +26,16 @@
 #' @examples
 #' library(harmony)
 #' cell_samples=iCTC::raw_test_data$Clearcell_Polaris_sample_test
-#' results<-iCTC(cell_samples=cell_samples, cases = seq_len(3))
+#' results<-iCTC(cell_samples=cell_samples, cases = c(4,5,6))
 #' print(results)
 #' @return results, will retrun table of samples and predicted values
 #' corresponding cases which have given
 #' row conatins cases and column with sample names
 #' @export iCTC
-iCTC <- function(cell_samples,cases=seq_len(3))
+iCTC <- function(cell_samples,cases=c(4,5,6))
 {
     cases=as.integer(cases)
-    if(cases>9 || cases<1 )
+    if(any(cases>9) || any(cases<1))
     {
       print("please give any input in range 1 to 9")
       return()
