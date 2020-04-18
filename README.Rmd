@@ -2,12 +2,14 @@
 output: github_document
 ---
 
-```{r setup, include = FALSE}
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+    collapse = TRUE,
+    comment = "#>",
+    fig.path = "man/figures/README-",
+    out.width = "100%"
 )
 ```
 
@@ -22,6 +24,8 @@ The developer version of the R package can be installed
 with the following R commands:
 
 ``` r
+library(devtools)
+install_github("immunogenomics/harmony")
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install('iCTC')
@@ -53,9 +57,9 @@ head(cell_samples)
 
 
 ```{r main, message=FALSE,warning = FALSE, include=TRUE, cache=FALSE}
-results<-iCTC(cell_samples=cell_samples, cases = seq_len(3))
+results<-iCTC(cell_samples=cell_samples, cases = c(4,5,6))
 ```
 
 ```{r output, message=FALSE,warning = FALSE,include=TRUE, cache=FALSE}
-results
+results$CTC_probabilistic_score
 ```

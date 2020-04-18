@@ -38,8 +38,10 @@ this package stats::predicts whether -- is a CTC or
 not using various preprocessing techniques and machine learning
 }
 \examples{
+library(devtools)
+install_github("immunogenomics/harmony")
 library(harmony)
-cell_samples=iCTC::raw_test_data$Clearcell_Polaris_sample_test
+cell_samples<-iCTC::raw_test_data$Clearcell_Polaris_sample_test
 results<-iCTC(cell_samples=cell_samples, cases = c(4,5,6))
-print(results)
+results$CTC_probabilistic_score
 }

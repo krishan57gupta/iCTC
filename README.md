@@ -1,4 +1,6 @@
 
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 ## iCTC: identification of circulating tumor cells
 
 The goal of iCTC is to detect whether peripheral blood cells have CTCs
@@ -10,6 +12,8 @@ The developer version of the R package can be installed with the
 following R commands:
 
 ``` r
+library(devtools)
+install_github("immunogenomics/harmony")
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install('iCTC')
@@ -97,17 +101,17 @@ head(cell_samples)
 ```
 
 ``` r
-results<-iCTC(cell_samples=cell_samples, cases = seq_len(3))
+results<-iCTC(cell_samples=cell_samples, cases = c(4,5,6))
 #> [1] "All desired genes in row names found"
 #> [1] "All samples found with atlest 10 percent expressed genes\n                in column names of your data"
-#> [1] 1 2 3
-#> [1] "Harmony count 3"
-#> [1] "PCA count 0"
+#> [1] 4 5 6
+#> [1] "Harmony count 0"
+#> [1] "PCA count 3"
 #> [1] "Original count 0"
-#> [1] "Harmony correction running..."
+#> [1] "PCA correction running..."
 #> [1] "Normalization Done"
 #> [1] "Transformation Done"
-#> [1] "Harmony correction Done"
+#> [1] "PCA correction Done"
 #> [1] "NB running..."
 #> [1] "NB Done"
 #> [1] "RF running..."
@@ -117,38 +121,37 @@ results<-iCTC(cell_samples=cell_samples, cases = seq_len(3))
 ```
 
 ``` r
-results
-#> $predicted_Labels
-#>             Ctc_Naveen_1850-061-049-CS26_S19_15
-#> Harmony_NB  "CTC"                              
-#> Harmony_RF  "CTC"                              
-#> Harmony_GBM "CTC"                              
-#>             Ctc_Naveen_1850-061-049-CS29_S22_15 Ctc_Naveen_1851009049-10_S26_15
-#> Harmony_NB  "CTC"                               "CTC"                          
-#> Harmony_RF  "CTC"                               "CTC"                          
-#> Harmony_GBM "CTC"                               "CTC"                          
-#>             Ctc_Naveen_1851009049-11_S34_15 Ctc_Naveen_1851009049-14_S11_15
-#> Harmony_NB  "CTC"                           "CTC"                          
-#> Harmony_RF  "CTC"                           "CTC"                          
-#> Harmony_GBM "CTC"                           "CTC"                          
-#>             Ctc_Naveen_1851009049-15_S19_15 Ctc_Naveen_1851009049-16_S27_15
-#> Harmony_NB  "CTC"                           "CTC"                          
-#> Harmony_RF  "CTC"                           "CTC"                          
-#> Harmony_GBM "CTC"                           "CTC"                          
-#>             Ctc_Naveen_1851009049-17_S35_15 Ctc_Naveen_1851009049-4_S25_15
-#> Harmony_NB  "CTC"                           "CTC"                         
-#> Harmony_RF  "CTC"                           "CTC"                         
-#> Harmony_GBM "CTC"                           "CTC"                         
-#>             Ctc_Naveen_1851009049-5_S33_15 Ctc_Naveen_1851009049-7_S2_15
-#> Harmony_NB  "CTC"                          "CTC"                        
-#> Harmony_RF  "CTC"                          "CTC"                        
-#> Harmony_GBM "CTC"                          "CTC"                        
-#>             Ctc_Naveen_1851009049-8_S10_15 Ctc_Naveen_1851009049-9_S18_15
-#> Harmony_NB  "CTC"                          "CTC"                         
-#> Harmony_RF  "CTC"                          "CTC"                         
-#> Harmony_GBM "CTC"                          "CTC"                         
-#>             Ctc_Naveen_1851013039-26_S61_15 Ctc_Naveen_1851013039-6_S89_15
-#> Harmony_NB  "CTC"                           "CTC"                         
-#> Harmony_RF  "CTC"                           "Blood"                       
-#> Harmony_GBM "CTC"                           "Blood"
+results$CTC_probabilistic_score
+#>         Ctc_Naveen_1850-061-049-CS26_S19_15 Ctc_Naveen_1850-061-049-CS29_S22_15
+#> PCA_NB                            1.0000000                           1.0000000
+#> PCA_RF                            0.7100000                           0.7080000
+#> PCA_GBM                           0.9997641                           0.9997536
+#>         Ctc_Naveen_1851009049-10_S26_15 Ctc_Naveen_1851009049-11_S34_15
+#> PCA_NB                         1.000000                       1.0000000
+#> PCA_RF                         0.694000                       0.6820000
+#> PCA_GBM                        0.999689                       0.9993584
+#>         Ctc_Naveen_1851009049-14_S11_15 Ctc_Naveen_1851009049-15_S19_15
+#> PCA_NB                        1.0000000                       1.0000000
+#> PCA_RF                        0.6940000                       0.7080000
+#> PCA_GBM                       0.9996159                       0.9995862
+#>         Ctc_Naveen_1851009049-16_S27_15 Ctc_Naveen_1851009049-17_S35_15
+#> PCA_NB                        1.0000000                       1.0000000
+#> PCA_RF                        0.6740000                       0.6300000
+#> PCA_GBM                       0.9993271                       0.9995179
+#>         Ctc_Naveen_1851009049-4_S25_15 Ctc_Naveen_1851009049-5_S33_15
+#> PCA_NB                       1.0000000                      1.0000000
+#> PCA_RF                       0.6940000                      0.7100000
+#> PCA_GBM                      0.9995179                      0.9995734
+#>         Ctc_Naveen_1851009049-7_S2_15 Ctc_Naveen_1851009049-8_S10_15
+#> PCA_NB                       1.000000                       1.000000
+#> PCA_RF                       0.690000                       0.708000
+#> PCA_GBM                      0.999336                       0.999767
+#>         Ctc_Naveen_1851009049-9_S18_15 Ctc_Naveen_1851013039-26_S61_15
+#> PCA_NB                       1.0000000                       1.0000000
+#> PCA_RF                       0.6980000                       0.9220000
+#> PCA_GBM                      0.9996666                       0.9725238
+#>         Ctc_Naveen_1851013039-6_S89_15
+#> PCA_NB                       1.0000000
+#> PCA_RF                       0.5740000
+#> PCA_GBM                      0.7853166
 ```
