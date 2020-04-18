@@ -337,7 +337,7 @@ NB <- function(data_case,te)
                      'nb',trControl=caret::trainControl(method='cv',
                     number=5, returnResamp = "all"))
     test_prediction_1 <-stats::predict(fit,te)
-    test_prob <-stats::predict(iCTC::fit,te,type="prob")
+    test_prob <-stats::predict(fit,te,type="prob")
     }
     return_list <- list("te_labels"=as.numeric(as.matrix(test_prediction_1)),
                       "te_probCTC"=as.numeric(test_prob[,1]),

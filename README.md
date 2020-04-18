@@ -40,7 +40,7 @@ library(iCTC)
 ```
 
 ``` r
-cell_samples=iCTC::raw_test_data$Clearcell_Polaris_sample_test
+cell_samples<-iCTC::raw_test_data$Clearcell_Polaris_sample_test
 head(cell_samples)
 #>          Ctc_Naveen_1850-061-049-CS26_S19_15
 #> CDH2                                    0.00

@@ -51,7 +51,7 @@ Libraries need to be loaded before running iCTC.
 library(iCTC)
 ```
 ```{r data, message=FALSE,warning = FALSE,include=TRUE, cache=FALSE}
-cell_samples=iCTC::raw_test_data$Clearcell_Polaris_sample_test
+cell_samples<-iCTC::raw_test_data$Clearcell_Polaris_sample_test
 head(cell_samples)
 ```
 
