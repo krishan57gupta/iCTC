@@ -13,6 +13,10 @@ following R commands:
 
 ``` r
 library(devtools)
+install.packages("klaR")
+install.packages("gbm")
+install.packages("caret")
+install.packages("randomForest")
 install_github("immunogenomics/harmony")
 install_github('krishan57gupta/iCTC')
 ```
