@@ -29,6 +29,7 @@ Imports:
     klaR,
     randomForest,
     gbm,
+    harmony,
     devtools
 Suggests: 
     knitr,
