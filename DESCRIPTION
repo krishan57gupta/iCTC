@@ -25,11 +25,11 @@ biocViews:
     Preprocessing
 Imports: 
     BiocManager,
+    harmony
     caret,
     klaR,
     randomForest,
     gbm,
-    harmony,
     devtools
 Suggests: 
     knitr,
