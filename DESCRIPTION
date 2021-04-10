@@ -25,7 +25,7 @@ biocViews:
     Preprocessing
 Imports: 
     BiocManager,
-    harmony
+    harmony,
     caret,
     klaR,
     randomForest,
