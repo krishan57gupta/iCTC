@@ -8,18 +8,8 @@ The goal of iCTC is to detect whether peripheral blood cells have CTCs
 
 ## Installation
 
-The developer version of the R package can be installed with the
+The developer version of the R package can be installed with the 
 following R commands:
-
-``` r
-library(devtools)
-install_github("immunogenomics/harmony")
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-BiocManager::install('iCTC')
-```
-
-or can be installed with the following R commands:
 
 ``` r
 library(devtools)
