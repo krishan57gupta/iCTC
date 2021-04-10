@@ -14,7 +14,7 @@ following R commands:
 ``` r
 library(devtools)
 install_github("immunogenomics/harmony")
-install_github('krishan57gupta/iCTC')
+install_github("krishan57gupta/iCTC")
 ```
 
 ## Vignette tutorial
