@@ -14,7 +14,7 @@ Description: Identification of CTC in blood streams
     using preprocessing techniques and machine learning.
 URL: https://github.com/krishan57gupta/iCTC
 BugReports: https://github.com/krishan57gupta/iCTC/issues
-License: GPL-3
+License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
